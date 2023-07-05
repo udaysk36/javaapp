@@ -8,7 +8,7 @@ pipeline {
     } 
     stage ('Unittest') {
       steps{
-        sh 'maventest'
+        sh 'mvn clean verify -DskipITs=true';junit '**/target/surefire-reports/TEST-*.xml'archive 'target/*.jar'
       }
     } 
   }
