@@ -2,16 +2,15 @@ pipeline {
   agent any 
     stages {
       stage ('git checkout') {
-        steps{
+        steps {
           git branch: 'main', url: 'https://github.com/udaysk36/javaapp.git'
       }
     } 
-    stage ('Unittest') {
-      steps{
-        scripts{
-         sh 'mvnTest'
-        }
+      stage ('Unittest') {
+        steps { 
+          mvnTest
       }
+     }
     } 
   }
 } 
