@@ -8,7 +8,7 @@ pipeline {
     }
       stage ('unit test') { 
         steps{
-           sh mvnTest
+           junit allowEmptyResults: true, checksName: 'junit test', testResults: 'javaapp/pom.xml'
         }
       }
    }     
