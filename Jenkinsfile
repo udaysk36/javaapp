@@ -8,7 +8,7 @@ pipeline {
     }
       stage ('unit test') { 
         steps{
-           junit 'javaapp/pom.xml'
+           sh mvntest{}
         }
       }
    }     
