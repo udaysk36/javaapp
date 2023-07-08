@@ -6,9 +6,9 @@ pipeline {
           git branch: 'main', url: 'https://github.com/udaysk36/javaapp.git'
       }
     }
-      stage ('unit test') { 
+      stage ('build test') { 
         steps{
-           sh 'mvnTest'
+           sh 'mvn clean install'
         }
       }
    }     
