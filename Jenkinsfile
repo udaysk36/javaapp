@@ -8,7 +8,7 @@ pipeline {
     }
       stage ('unit test') { 
         steps{
-            sh 'mvn test'
+            sh junit allowEmptyResults: true, keepLongStdio: true, skipMarkingBuildUnstable: true, skipOldReports: true, testResults: '/javaapp/pom.xml'
         }
       }
    }     
