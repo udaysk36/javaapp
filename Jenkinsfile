@@ -8,7 +8,7 @@ pipeline {
     }
       stage ('unit test') { 
         steps{
-            "mvn test"
+            sh 'mvn test'
         }
       }
    }     
