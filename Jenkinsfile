@@ -3,7 +3,7 @@ pipeline {
        environment {
            PATH="/opt/maven/bin/:$PATH"
    }    
-    stages {
+    stages{
       stage ('git checkout') {
         steps {
           git branch: 'main', url: 'https://github.com/udaysk36/javaapp.git'
@@ -12,28 +12,28 @@ pipeline {
       stage ('unit test') { 
         steps{
             sh 'mvn test'
-        }
-      }
+     }
+   }
      stage ('Integration test') { 
         steps{
             sh 'mvn verify -DeskipUnitTest'
-        }
       }
+   }
      stage('maven build') {
        steps{
             sh 'mvn clean install'
-       }
-     }
+      }
+   }
      stage('static code') {
        steps{
           script{
             withSonarQubeEnv(credentialsId: 'sonar-api') {
               sh 'mvn clean package sonar:sonar'
-            }
-          }
-       }
+           }
+        }
      }
-     stage('static code') {
+  }
+     stage('Quality gate status') {
        steps{
           script{
             waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api'
