@@ -33,12 +33,13 @@ pipeline {
           }
        }
      }
-     stage('Quailty gate status') {
+     stage('static code') {
        steps{
-         scripts{
-            waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api' {
-       }
-     } 
-   }     
- }
-}
+          script{
+            waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api'
+        }   
+      }        
+    }
+  }
+} 
+     
