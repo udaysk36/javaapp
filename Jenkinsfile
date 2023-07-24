@@ -33,6 +33,27 @@ pipeline {
         }
      }
     }
-  }
+     stage('store art factory')
+      steps{
+       scripts{
+            nexusArtifactUploader artifacts:
+             [
+               [
+                 artifactId: 'spring-boot-starter-parent', 
+                 classifier: '', 
+                 file: 'target/2.2.1.jar', 
+                 type: 'jar'
+               ]
+            ], 
+                  credentialsId: 'nexus', 
+                  groupId: 'org.springframework.boot', 
+                  nexusUrl: '13.53.40.31:8081', 
+                  nexusVersion: 'nexus3', 
+                  protocol: 'http', 
+                  repository: 'java-demoapp', 
+                  version: '2.2.1'
+            }
+       }
+   }
 } 
      
