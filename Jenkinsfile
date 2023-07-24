@@ -35,7 +35,7 @@ pipeline {
    }
      stage('store art factory') {
       steps{
-       scripts{
+       script{
             nexusArtifactUploader artifacts:
              [
                [
