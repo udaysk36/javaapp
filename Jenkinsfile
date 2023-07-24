@@ -41,7 +41,7 @@ pipeline {
                [
                  artifactId: 'spring-boot-starter-parent', 
                  classifier: '', 
-                 file: 'target/2.2.1.jar', 
+                 file: 'target/', 
                  type: 'jar'
                ]
             ], 
