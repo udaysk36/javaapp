@@ -32,8 +32,8 @@ pipeline {
            }
         }
      }
-    }
-     stage('store art factory')
+   }
+     stage('store art factory') {
       steps{
        scripts{
             nexusArtifactUploader artifacts:
@@ -53,7 +53,8 @@ pipeline {
                   repository: 'java-demoapp', 
                   version: '2.2.1'
             }
-       }
+        }
+     }
    }
 } 
      
