@@ -47,7 +47,7 @@ pipeline {
             ], 
                   credentialsId: 'nexus', 
                   groupId: 'org.springframework.boot', 
-                  nexusUrl: '13.53.40.31:8081', 
+                  nexusUrl: '13.51.146.213:8081', 
                   nexusVersion: 'nexus3', 
                   protocol: 'http', 
                   repository: 'java-demoapp', 
