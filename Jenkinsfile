@@ -41,7 +41,7 @@ pipeline {
                [
                  artifactId: 'spring-boot-starter-parent', 
                  classifier: '', 
-                 file: 'target/minikube-sample.jar', 
+                 file: 'target', 
                  type: 'jar'
                ]
             ], 
