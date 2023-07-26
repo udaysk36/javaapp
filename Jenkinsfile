@@ -33,7 +33,8 @@ pipeline {
         }
      }
    }
-     stage('store art factory') {
+   */
+    /* stage('store art factory') {
       steps{
        script{
             nexusArtifactUploader artifacts:
